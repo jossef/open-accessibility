@@ -40,6 +40,18 @@
 
         }
 
+        /* Portrait */
+        @media screen and (max-device-width: 799px) {
+
+            .section-example {
+                display: none !important;;
+            }
+
+            .section-logo {
+                width: 100vw !important;;
+            }
+        }
+
         .fullpage {
             display: flex; /* or inline-flex */
 
@@ -102,8 +114,16 @@
             opacity: 1;
         }
 
-        .center {
+        .image-container {
+            max-width: 300px;
             text-align: center;
+        }
+
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+
         }
 
         .contribute {
@@ -124,14 +144,6 @@
 
         .section-example:hover {
         }
-
-        .logo img {
-            width: 300px;
-            height: auto;
-            margin-bottom: 20px;
-
-        }
-
 
         .aligner {
             /**/
@@ -260,6 +272,7 @@
             text-decoration: none;
         }
 
+
     </style>
 </head>
 <body>
@@ -270,7 +283,7 @@
 
         <div class="aligner-item logo">
 
-            <div class="center">
+            <div class="image-container">
                 <img src="misc/logo.png">
             </div>
 
