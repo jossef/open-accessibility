@@ -97,7 +97,7 @@
 
         var userOptions = getUserOptions();
         var initialOptions = $.extend({}, defaultOptions, customOptions);
-        var options = $.extend({}, initialOptions, userOptions);
+        var options = $.extend({}, initialOptions, userOptions, customOptions);
 
 
         if (!options.isMobileEnabled && isMobileBrowser()) {
@@ -230,7 +230,8 @@
         expandButton.hide();
         menu.hide();
 
-        if (options.isMenuOpened && customOptions.isMenuOpened) {
+        if (customOptions.isMenuOpened) {
+            options.isMenuOpened = true;
             menu.show();
             expandButton.hide();
         }
