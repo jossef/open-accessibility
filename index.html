@@ -3,7 +3,14 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HTML5 Test Page</title>
+    <title>מה קורה יא מנגיש אתרים</title>
+
+    <meta property="og:locale" content="he_IL"/>
+    <meta property="og:type" content="article"/>
+    <meta property="og:title" content="צריך הנגשה באתר? הכר פרוייקט קוד פתוח עם חזון"/>
+    <meta property="og:description" content="מאמץ משותף לסרגל נגישות חינמי ופשוט שכל מפעיל אתר יוכל לשלב בעצמו"/>
+    <meta property="og:site_name" content="landing page"/>
+    <meta property="og:image" content="misc/sharing-thumbnail.png"/>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="dist/open-accessability.min.css">
@@ -13,7 +20,8 @@
     <script>
         $(function () {
             $('body').openAccessibility({
-                textSelector: 'div,span,p,a,td,table,tr'
+                textSelector: 'div,span,p,a,td,table,tr',
+                isMenuOpened: false
             });
         })
     </script>
@@ -38,7 +46,6 @@
         }
 
         .section {
-
             overflow-y: auto;
         }
 
@@ -55,11 +62,14 @@
             height: 100vh;
             background: #1d2025;
             overflow-y: scroll;
+            overflow-x: hidden;
 
             color: #fff;
         }
 
         .logo {
+            padding: 10px 0;
+
             width: 600px;
             min-height: 600px;
         }
@@ -83,11 +93,21 @@
             opacity: 0.6;
         }
 
+        .hover-focus {
+            transition: 0.3s;
+            opacity: 0.5;
+        }
+
+        .hover-focus:hover {
+            opacity: 1;
+        }
+
         .center {
             text-align: center;
         }
 
         .contribute {
+            padding: 10px 0;
 
             transition: 1s;
             transform: rotateY(40deg) rotateX(40deg);
@@ -112,49 +132,31 @@
 
         }
 
-        .github-corner:hover .octo-arm {
-            animation: octocat-wave 560ms ease-in-out
-        }
-
-        @keyframes octocat-wave {
-            0%, 100% {
-                transform: rotate(0deg)
-            }
-            20%, 60% {
-                transform: rotate(-25deg)
-            }
-            40%, 80% {
-                transform: rotate(10deg)
-            }
-        }
-
-        @media (max-width: 500px) {
-            .github-corner:hover .octo-arm {
-                animation: none
-            }
-
-            .github-corner .octo-arm {
-                animation: octocat-wave 560ms ease-in-out
-            }
-        }
 
         .aligner {
-            display: flex;
-            align-items: center;
-            justify-content: center;
+            /**/
+            /*display: flex;*/
+            /*align-items: center;*/
+            /*justify-content: center;*/
         }
 
         .aligner-item {
             max-width: 50%;
+            margin: auto;
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+
         }
 
-        .aligner-item-start {
-            align-self: flex-start;
-        }
+        /*.aligner-item-start {*/
+        /*align-self: flex-start;*/
+        /*}*/
 
-        .aligner-item-end {
-            align-self: flex-end;
-        }
+        /*.aligner-item-end {*/
+        /*align-self: flex-end;*/
+        /*}*/
 
         .highlight {
             background: #000;
@@ -243,10 +245,6 @@
             padding: 1em;
         }
 
-        .buttons-inline.btn {
-            display: flex;
-        }
-
         .btn {
             -ms-flex-item-align: center;
             -ms-grid-row-align: center;
@@ -265,22 +263,14 @@
     </style>
 </head>
 <body>
-<a href="https://github.com/jossef/open-accessability" target="_blank" class="github-corner" aria-label="View source on Github">
-    <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; z-index: 2; position: fixed; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true">
-        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
-        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
-        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
-    </svg>
-</a>
+<a href="https://github.com/jossef/open-accessability"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/8b6b8ccc6da3aa5722903da7b58eb5ab1081adee/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png"></a>
 
 <div class="fullpage">
     <div class="section section-logo aligner">
 
-        <div class="aligner-item aligner-item-start"></div>
         <div class="aligner-item logo">
 
             <div class="center">
-
                 <img src="misc/logo.png">
             </div>
 
@@ -301,15 +291,15 @@
             <p class="half open-accessibility-text">
                 כל אחד יכול לתרום לקוד הפרוייקט ולהפוך אותו ליותר טוב. מצאת באג?
                 <a class="highlight" href="https://github.com/jossef/open-accessability/issues" target="_blank">דווח עליו כאן</a>
-                ; יש לך רעיון למימוש יותר טוב? תרגם אותו אל
+                ; יש לך רעיון למימוש יותר טוב? זורם!!! אני מציע לך לעשות
+                <a class="highlight" href="https://github.com/jossef/open-accessability/fork" target="_blank">fork</a>
+                ולפנק ב
                 <a class="highlight" href="https://github.com/jossef/open-accessability" target="_blank">Pull Request</a>
             </p>
         </div>
-        <div class="aligner-item aligner-item-end"></div>
 
     </div>
     <div class="section section-example aligner">
-        <div class="aligner-item aligner-item-start"></div>
 
         <div class="aligner-item contribute">
 
@@ -330,36 +320,44 @@
             <script src="https://gist.github.com/jossef/5069f268f375e8dc33cb6776b423e804.js?file=initialize.html"></script>
 
             <div class="buttons">
-                <a class="btn btn-blue" href=""><span>תראה לי דוגמא</span></a>
+                <a class="btn btn-blue" href="http://codepen.io/Jossef/pen/GNPzzq/" target="_blank"><span>תראה לי דוגמא</span></a>
             </div>
 
 
-            <p class="gap header open-accessibility-text">
-                התאמה אישית
-            </p>
+            <div class="hover-focus">
+
+                <p class="gap header open-accessibility-text">
+                    התאמה אישית
+                </p>
 
 
-            <p class="gap open-accessibility-text">
-                למשל, כך ניתן לשנות מאפיינים כמו את הselector של האלמנטים שמושפעים משינויי גודל טקסט:
-            </p>
+                <p class="gap open-accessibility-text">
+                    למשל, כך ניתן לשנות מאפיינים כמו את הselector של האלמנטים שמושפעים משינויי גודל טקסט:
+                </p>
 
-            <script src="https://gist.github.com/jossef/5069f268f375e8dc33cb6776b423e804.js?file=initialize-custom.js"></script>
+                <script src="https://gist.github.com/jossef/5069f268f375e8dc33cb6776b423e804.js?file=initialize-custom.js"></script>
 
 
-            <div class="buttons buttons-inline">
-                <a class="btn btn-orange" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><span>לא מאמין?</span></a>
+                <div class="buttons">
+                <span class="btn btn-orange">
+
+                <a class="" target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><span>לא מאמין?</span></a>
+                <a style="font-size: 10px" target="_blank" href="http://codepen.io/Jossef/pen/qqLgve"><span>ועכשיו?</span></a>
+                </span>
+                </div>
             </div>
 
+            <div class="hover-focus">
 
-            <p class="gap header open-accessibility-text">
-                רשיון
-            </p>
-            <p class="open-accessibility-text">
-                הקוד משוחרר תחת רשיון Apache V2
-            </p>
+                <p class="gap header open-accessibility-text">
+                    רשיון
+                </p>
+                <p class="open-accessibility-text">
+                    הקוד משוחרר תחת רשיון Apache V2, תעשו איתו מה שאתם רוצים
+                </p>
 
+            </div>
 
-            <div class="aligner-item aligner-item-end"></div>
 
         </div>
     </div>
