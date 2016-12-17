@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML5 Test Page</title>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="dist/open-accessability.min.css">
+    <script src="dist/open-accessability.min.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Arimo|Assistant:400,700,800&amp;subset=hebrew" rel="stylesheet">
+
+    <script>
+        $(function () {
+            $('body').openAccessibility({
+                textSelector: 'div,span,p,a,td,table,tr'
+            });
+        })
+    </script>
+
+    <style>
+        html, body {
+            direction: rtl;
+            padding: 0;
+            margin: 0;
+            width: 100vw;
+            height: 100vh;
+            background: #ffffff;
+            overflow: hidden;
+            font-family: 'Arimo', sans-serif;
+            font-size: 17px;
+
+        }
+
+        .fullpage {
+            display: flex; /* or inline-flex */
+
+        }
+
+        .section {
+
+            overflow-y: auto;
+        }
+
+        .section-logo {
+            background: #FFF59D;
+            display: flex;
+            width: 50vw;
+            height: 100vh;
+        }
+
+        .section-example {
+            display: flex;
+            width: 50vw;
+            height: 100vh;
+            background: #1d2025;
+            overflow-y: scroll;
+
+            color: #fff;
+        }
+
+        .logo {
+            width: 600px;
+            min-height: 600px;
+        }
+
+        p {
+            margin: 5px auto;
+        }
+
+        .gap {
+            margin-top: 20px;
+        }
+
+        .header {
+            font-size: 1.5em;
+            font-weight: 800;
+            font-family: 'Assistant', sans-serif;
+
+        }
+
+        .half {
+            opacity: 0.6;
+        }
+
+        .center {
+            text-align: center;
+        }
+
+        .contribute {
+
+            transition: 1s;
+            transform: rotateY(40deg) rotateX(40deg);
+
+            width: 600px;
+            min-height: 600px;
+
+        }
+
+        .section-example:hover .contribute {
+
+            transform: rotate(0deg);
+        }
+
+        .section-example:hover {
+        }
+
+        .logo img {
+            width: 300px;
+            height: auto;
+            margin-bottom: 20px;
+
+        }
+
+        .github-corner:hover .octo-arm {
+            animation: octocat-wave 560ms ease-in-out
+        }
+
+        @keyframes octocat-wave {
+            0%, 100% {
+                transform: rotate(0deg)
+            }
+            20%, 60% {
+                transform: rotate(-25deg)
+            }
+            40%, 80% {
+                transform: rotate(10deg)
+            }
+        }
+
+        @media (max-width: 500px) {
+            .github-corner:hover .octo-arm {
+                animation: none
+            }
+
+            .github-corner .octo-arm {
+                animation: octocat-wave 560ms ease-in-out
+            }
+        }
+
+        .aligner {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .aligner-item {
+            max-width: 50%;
+        }
+
+        .aligner-item-start {
+            align-self: flex-start;
+        }
+
+        .aligner-item-end {
+            align-self: flex-end;
+        }
+
+        .highlight {
+            background: #000;
+            padding-right: 5px;
+            padding-left: 5px;
+            font-weight: 700;
+            color: #fff;
+        }
+    </style>
+
+    <style>
+        /* Mixins */
+        .btn {
+            opacity: 0.5;
+            font-family: 'Assistant', sans-serif;
+            display: inline-block;
+            margin: 0.5em 0;
+            padding: 0.5em 1em;
+            background: transparent;
+            border-radius: 3px;
+            font-weight: 700;
+            text-align: center;
+
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            opacity: 1;
+        }
+
+        .btn-green span {
+            background: -webkit-linear-gradient(left, #add356, #00dfa6);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-orange span {
+            background: -webkit-linear-gradient(left, #ffcb52, #ff451f);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-blue span {
+            background: -webkit-linear-gradient(left, #3dade9, #bf2fcb);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .btn-xl {
+            padding: .75em;
+            font-size: 3em;
+            font-weight: 100;
+            line-height: 1;
+            letter-spacing: 1px;
+        }
+
+        /* Box-Shadow Technique */
+        .btn.btn-green {
+            color: #fff;
+            box-shadow: -1px 0 0 1px rgba(173, 211, 86, 0.75), -1px -1px 0 1px rgba(130, 214, 106, 0.25), -1px 1px 0 1px rgba(130, 214, 106, 0.25), 0 -1px 0 1px rgba(87, 217, 126, 0.5), 0 1px 0 1px rgba(87, 217, 126, 0.5), 1px -1px 0 1px rgba(44, 220, 146, 0.25), 1px 1px 0 1px rgba(44, 220, 146, 0.25), 1px 0 0 1px rgba(0, 223, 166, 0.75);
+        }
+
+        .btn.btn-orange {
+            color: #fff;
+            box-shadow: -1px 0 0 1px rgba(255, 203, 82, 0.75), -1px -1px 0 1px rgba(255, 170, 70, 0.25), -1px 1px 0 1px rgba(255, 170, 70, 0.25), 0 -1px 0 1px rgba(255, 136, 57, 0.5), 0 1px 0 1px rgba(255, 136, 57, 0.5), 1px -1px 0 1px rgba(255, 103, 44, 0.25), 1px 1px 0 1px rgba(255, 103, 44, 0.25), 1px 0 0 1px rgba(255, 69, 31, 0.75);
+        }
+
+        .btn.btn-blue {
+            color: #fff;
+            box-shadow: -1px 0 0 1px rgba(61, 173, 233, 0.75), -1px -1px 0 1px rgba(94, 142, 226, 0.25), -1px 1px 0 1px rgba(94, 142, 226, 0.25), 0 -1px 0 1px rgba(126, 110, 218, 0.5), 0 1px 0 1px rgba(126, 110, 218, 0.5), 1px -1px 0 1px rgba(159, 79, 211, 0.25), 1px 1px 0 1px rgba(159, 79, 211, 0.25), 1px 0 0 1px rgba(191, 47, 203, 0.75);
+        }
+
+        .buttons {
+            display: -webkit-box;
+            display: -ms-flexbox;
+            display: flex;
+            -webkit-box-flex: 1;
+            -ms-flex: 1 0 1;
+            flex: 1 0 1;
+            -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+            -webkit-box-orient: vertical;
+            -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+            flex-direction: column;
+            padding: 1em;
+        }
+
+        .buttons-inline.btn {
+            display: flex;
+        }
+
+        .btn {
+            -ms-flex-item-align: center;
+            -ms-grid-row-align: center;
+            align-self: center;
+        }
+
+        .gist-meta {
+            display: none;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+<a href="https://github.com/jossef/open-accessability" target="_blank" class="github-corner" aria-label="View source on Github">
+    <svg width="80" height="80" viewBox="0 0 250 250" style="fill:#151513; color:#fff; z-index: 2; position: fixed; top: 0; border: 0; left: 0; transform: scale(-1, 1);" aria-hidden="true">
+        <path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path>
+        <path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path>
+        <path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path>
+    </svg>
+</a>
+
+<div class="fullpage">
+    <div class="section section-logo aligner">
+
+        <div class="aligner-item aligner-item-start"></div>
+        <div class="aligner-item logo">
+
+            <div class="center">
+
+                <img src="misc/logo.png">
+            </div>
+
+
+            <p class="header open-accessibility-text">זהו פרוייקט קוד פתוח עם חזון</p>
+            <p class="half open-accessibility-text">
+                מאמץ משותף לסרגל נגישות חינמי ופשוט שכל מפעיל אתר יוכל לשלב בעצמו
+            </p>
+
+            <p class="header gap open-accessibility-text">אבל למה?</p>
+            <p class="half open-accessibility-text">
+                קיים חוק במדינת ישראל המחייב אתרי אינטרנט לספק כלים לאנשים עם מוגבלויות.
+                אתרים חדשים נדרשים מהיום הראשון לספק פתרונות נגישות ונמצאים בסכנה של תביעה עד לסכום של 75,000 ש"ח אם לא יעשו כלום
+            </p>
+
+
+            <p class="header gap open-accessibility-text">יש מצב לעזרה?</p>
+            <p class="half open-accessibility-text">
+                כל אחד יכול לתרום לקוד הפרוייקט ולהפוך אותו ליותר טוב. מצאת באג?
+                <a class="highlight" href="https://github.com/jossef/open-accessability/issues" target="_blank">דווח עליו כאן</a>
+                ; יש לך רעיון למימוש יותר טוב? תרגם אותו אל
+                <a class="highlight" href="https://github.com/jossef/open-accessability" target="_blank">Pull Request</a>
+            </p>
+        </div>
+        <div class="aligner-item aligner-item-end"></div>
+
+    </div>
+    <div class="section section-example aligner">
+        <div class="aligner-item aligner-item-start"></div>
+
+        <div class="aligner-item contribute">
+
+            <p class="header open-accessibility-text">
+                איך מתחילים?
+            </p>
+            <p class="open-accessibility-text">
+                הוסיפו את קטע הקוד הבא שטוען את התוסף אל האתר
+            </p>
+
+            <script src="https://gist.github.com/jossef/5069f268f375e8dc33cb6776b423e804.js?file=include.html"></script>
+
+
+            <p class="open-accessibility-text">
+                ואת הסקריפט הבא שמאתחל את התוסף
+            </p>
+
+            <script src="https://gist.github.com/jossef/5069f268f375e8dc33cb6776b423e804.js?file=initialize.html"></script>
+
+            <div class="buttons">
+                <a class="btn btn-blue" href=""><span>תראה לי דוגמא</span></a>
+            </div>
+
+
+            <p class="gap header open-accessibility-text">
+                התאמה אישית
+            </p>
+
+
+            <p class="gap open-accessibility-text">
+                למשל, כך ניתן לשנות מאפיינים כמו את הselector של האלמנטים שמושפעים משינויי גודל טקסט:
+            </p>
+
+            <script src="https://gist.github.com/jossef/5069f268f375e8dc33cb6776b423e804.js?file=initialize-custom.js"></script>
+
+
+            <div class="buttons buttons-inline">
+                <a class="btn btn-orange" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><span>לא מאמין?</span></a>
+            </div>
+
+
+            <p class="gap header open-accessibility-text">
+                רשיון
+            </p>
+            <p class="open-accessibility-text">
+                הקוד משוחרר תחת רשיון Apache V2
+            </p>
+
+
+            <div class="aligner-item aligner-item-end"></div>
+
+        </div>
+    </div>
+</div>
+</body>
+</html>

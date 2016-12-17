@@ -4,7 +4,6 @@
 *.jar
 *.class
 *.gz
-dist/
 
 var/
 
@@ -24,7 +23,6 @@ __pycache__/
 env/
 
 submodules/*
-dist/*
 
 
 # -------------------------------

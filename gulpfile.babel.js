@@ -7,6 +7,8 @@ import rename from 'gulp-rename';
 import autoprefixer from 'gulp-autoprefixer';
 import fileinclude from 'gulp-file-include';
 import cssBase64 from 'gulp-css-base64';
+import uglify from 'gulp-uglify';
+import cssmin from 'gulp-cssmin';
 
 gulp.task('sass', () => {
     return gulp.src('./src/**/*.scss')
@@ -16,8 +18,9 @@ gulp.task('sass', () => {
             browsers: ['last 2 versions'],
             cascade: false
         }))
+        .pipe(cssmin())
         .pipe(rename((path)=> {
-            path.basename = 'styles';
+            path.basename = 'open-accessability.min';
         }))
         .pipe(gulp.dest('./dist'));
 });
@@ -28,11 +31,13 @@ gulp.task('js', () => {
         .pipe(babel({
             presets: ['es2015']
         }))
+        .pipe(uglify())
         .pipe(rename((path)=> {
-            path.basename = 'scripts';
+            path.basename = 'open-accessability.min';
         }))
         .pipe(gulp.dest('./dist'));
 });
+
 
 gulp.task('default', ['js', 'sass']);
 
