@@ -1,6 +1,28 @@
 {
   "name": "open-accessibility",
-  "version": "0.0.1",
+  "version": "0.0.2",
+  "description": "Free accessability tools menu for website maintainers powered by jQuery",
+  "main": "dist/open-accessability.min.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jossef/open-accessability"
+  },
+  "keywords": [
+    "accessibility",
+    "accessibility icons",
+    "accessibility menu",
+    "text zoom",
+    "open-accessibility"
+  ],
+  "author": "Jossef Harush",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/jossef/open-accessability/issues"
+  },
+  "homepage": "https://jossef.github.io/open-accessability/",
+  "dependencies": {
+    "jquery": "*"
+  },
   "devDependencies": {
     "babel-core": "^6.18.2",
     "babel-preset-es2015": "^6.18.0",
