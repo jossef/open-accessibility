@@ -82,7 +82,7 @@
         var defaultOptions = {
             isMenuOpened: false,
             highlightedLinks: false,
-            isMobileEnabled: false,
+            isMobileEnabled: true,
             grayscale: 0,
             brightness: 100,
             contrast: 100,
