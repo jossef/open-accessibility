@@ -98,7 +98,7 @@
             cursor: false,
             textSelector: '.open-accessibility-text',
             invert: false,
-            iconSize: 's' // supported sizes are s(mall), m(edium), l(arge)
+            iconSize: 'm' // supported sizes are s(mall), m(edium), l(arge)
         };
 
         var userOptions = getUserOptions();
