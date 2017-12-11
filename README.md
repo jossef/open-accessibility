@@ -56,5 +56,6 @@ zoom: 1
 cursor: false
 textSelector: '.open-accessibility-text'
 invert: false
+iconSize: 'm'
 ```
 
