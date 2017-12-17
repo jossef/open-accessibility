@@ -11,7 +11,7 @@
 
         fontSize = fontSize || '';
         return UNITS
-            .filter(unit=>fontSize.match(new RegExp(unit + '$', 'gi')))
+            .filter(unit => fontSize.match(new RegExp(unit + '$', 'gi')))
             .pop()
 
     }
@@ -74,6 +74,11 @@
             });
     }
 
+    function getIconClass(size) {
+        var prefix = 'open-accessibility-size-';
+        return prefix + size;
+
+    }
     $.fn.openAccessibility = function (customOptions) {
         var element = this;
 
@@ -92,7 +97,8 @@
             zoom: 1,
             cursor: false,
             textSelector: '.open-accessibility-text',
-            invert: false
+            invert: false,
+            iconSize: 'm' // supported sizes are s(mall), m(edium), l(arge)
         };
 
         var userOptions = getUserOptions();
@@ -111,7 +117,7 @@
 
         var html = $('html');
         var body = $('body');
-        var container = $(".open-accessibility");
+        var container = $(".open-accessibility");        
         var menu = $(".open-accessibility-menu");
         var expandButton = $(".open-accessibility-expand-button");
         var closeButton = $(".open-accessibility-close-button");
@@ -125,6 +131,8 @@
         var resetButton = $(".open-accessibility-reset-button");
         var cursorWorkaround = $(".open-accessibility-cursor-workaround");
 
+        // Set icon size
+        container.addClass(getIconClass(options.iconSize));
 
         html.addClass('open-accessibility-zoom');
 
