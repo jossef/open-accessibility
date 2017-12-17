@@ -31,7 +31,7 @@ gulp.task('js', () => {
         .pipe(babel({
             presets: ['es2015']
         }))
-        //.pipe(uglify())
+        .pipe(uglify())
         .pipe(rename((path)=> {
             path.basename = path.basename.split('.')[0] + '.min';
         }))
