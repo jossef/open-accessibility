@@ -1,20 +1,22 @@
 <!doctype html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>מה קורה יא מנגיש אתרים</title>
 
-    <meta property="og:locale" content="he_IL"/>
-    <meta property="og:type" content="article"/>
-    <meta property="og:title" content="צריך הנגשה באתר? הכר פרוייקט קוד פתוח עם חזון"/>
-    <meta property="og:description" content="מאמץ משותף לסרגל נגישות חינמי ופשוט שכל מפעיל אתר יוכל לשלב בעצמו"/>
-    <meta property="og:site_name" content="landing page"/>
-    <meta property="og:image" content="misc/sharing-thumbnail.png"/>
+    <meta property="og:locale" content="he_IL" />
+    <meta property="og:type" content="article" />
+    <meta property="og:title" content="צריך הנגשה באתר? הכר פרוייקט קוד פתוח עם חזון" />
+    <meta property="og:description" content="מאמץ משותף לסרגל נגישות חינמי ופשוט שכל מפעיל אתר יוכל לשלב בעצמו" />
+    <meta property="og:site_name" content="landing page" />
+    <meta property="og:image" content="misc/sharing-thumbnail.png" />
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <link rel="stylesheet" href="dist/open-accessability.min.css">
     <script src="dist/open-accessability.min.js"></script>
+    <script src="dist/locale.min.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Arimo|Assistant:400,700,800&amp;subset=hebrew" rel="stylesheet">
 
     <script>
@@ -22,13 +24,15 @@
             $('body').openAccessibility({
                 textSelector: 'div,span,p,a,td,table,tr',
                 isMenuOpened: false,
-                iconSize: 'm'
+                iconSize: 'm',
+                localization: ['he'],                
             });
         })
     </script>
 
     <style>
-        html, body {
+        html,
+        body {
             direction: rtl;
             padding: 0;
             margin: 0;
@@ -42,20 +46,23 @@
         }
 
         /* Portrait */
+
         @media screen and (max-device-width: 799px) {
 
             .section-example {
-                display: none !important;;
+                display: none !important;
+                ;
             }
 
             .section-logo {
-                width: 100vw !important;;
+                width: 100vw !important;
+                ;
             }
         }
 
         .fullpage {
-            display: flex; /* or inline-flex */
-
+            display: flex;
+            /* or inline-flex */
         }
 
         .section {
@@ -143,8 +150,7 @@
             transform: rotate(0deg);
         }
 
-        .section-example:hover {
-        }
+        .section-example:hover {}
 
         .aligner {
             /**/
@@ -164,11 +170,15 @@
         }
 
         /*.aligner-item-start {*/
+
         /*align-self: flex-start;*/
+
         /*}*/
 
         /*.aligner-item-end {*/
+
         /*align-self: flex-end;*/
+
         /*}*/
 
         .highlight {
@@ -182,6 +192,7 @@
 
     <style>
         /* Mixins */
+
         .btn {
             opacity: 0.5;
             font-family: 'Assistant', sans-serif;
@@ -227,6 +238,7 @@
         }
 
         /* Box-Shadow Technique */
+
         .btn.btn-green {
             color: #fff;
             box-shadow: -1px 0 0 1px rgba(173, 211, 86, 0.75), -1px -1px 0 1px rgba(130, 214, 106, 0.25), -1px 1px 0 1px rgba(130, 214, 106, 0.25), 0 -1px 0 1px rgba(87, 217, 126, 0.5), 0 1px 0 1px rgba(87, 217, 126, 0.5), 1px -1px 0 1px rgba(44, 220, 146, 0.25), 1px 1px 0 1px rgba(44, 220, 146, 0.25), 1px 0 0 1px rgba(0, 223, 166, 0.75);
@@ -272,109 +284,118 @@
             color: inherit;
             text-decoration: none;
         }
-
-
     </style>
 </head>
+
 <body>
-<a href="https://github.com/jossef/open-accessability"><img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/8b6b8ccc6da3aa5722903da7b58eb5ab1081adee/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6f72616e67655f6666373630302e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png"></a>
+    <a href="https://github.com/jossef/open-accessability">
+        <img style="position: absolute; top: 0; left: 0; border: 0;" src="https://camo.githubusercontent.com/8b6b8ccc6da3aa5722903da7b58eb5ab1081adee/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f6c6566745f6f72616e67655f6666373630302e706e67"
+            alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_left_orange_ff7600.png">
+    </a>
 
-<div class="fullpage">
-    <div class="section section-logo aligner">
+    <div class="fullpage">
+        <div class="section section-logo aligner">
 
-        <div class="aligner-item logo">
+            <div class="aligner-item logo">
 
-            <div class="image-container">
-                <img src="misc/logo.png">
-            </div>
-
-
-            <p class="header open-accessibility-text">זהו פרוייקט קוד פתוח עם חזון</p>
-            <p class="half open-accessibility-text">
-                מאמץ משותף לסרגל נגישות חינמי ופשוט שכל מפעיל אתר יוכל לשלב בעצמו
-            </p>
-
-            <p class="header gap open-accessibility-text">אבל למה?</p>
-            <p class="half open-accessibility-text">
-                קיים חוק במדינת ישראל המחייב אתרי אינטרנט לספק כלים לאנשים עם מוגבלויות.
-                אתרים חדשים נדרשים מהיום הראשון לספק פתרונות נגישות ונמצאים בסכנה של תביעה עד לסכום של 75,000 ש"ח אם לא יעשו כלום
-            </p>
-
-
-            <p class="header gap open-accessibility-text">יש מצב לעזרה?</p>
-            <p class="half open-accessibility-text">
-                כל אחד יכול לתרום לקוד הפרוייקט ולהפוך אותו ליותר טוב. מצאת באג?
-                <a class="highlight" href="https://github.com/jossef/open-accessability/issues" target="_blank">דווח עליו כאן</a>
-                ; יש לך רעיון למימוש יותר טוב? זורם!!! אני מציע לך לעשות
-                <a class="highlight" href="https://github.com/jossef/open-accessability/fork" target="_blank">fork</a>
-                ולפנק ב
-                <a class="highlight" href="https://github.com/jossef/open-accessability" target="_blank">Pull Request</a>
-            </p>
-        </div>
-
-    </div>
-    <div class="section section-example aligner">
-
-        <div class="aligner-item contribute">
-
-            <p class="header open-accessibility-text">
-                איך מתחילים?
-            </p>
-            <p class="open-accessibility-text">
-                הוסיפו את קטע הקוד הבא שטוען את התוסף אל האתר
-            </p>
-
-            <script src="https://gist.github.com/jossef/5069f268f375e8dc33cb6776b423e804.js?file=include.html"></script>
-
-
-            <p class="open-accessibility-text">
-                ואת הסקריפט הבא שמאתחל את התוסף
-            </p>
-
-            <script src="https://gist.github.com/jossef/5069f268f375e8dc33cb6776b423e804.js?file=initialize.html"></script>
-
-            <div class="buttons">
-                <a class="btn btn-blue" href="http://codepen.io/Jossef/pen/GNPzzq/" target="_blank"><span>תראה לי דוגמא</span></a>
-            </div>
-
-
-            <div class="hover-focus">
-
-                <p class="gap header open-accessibility-text">
-                    התאמה אישית
-                </p>
-
-
-                <p class="gap open-accessibility-text">
-                    למשל, כך ניתן לשנות מאפיינים כמו את הselector של האלמנטים שמושפעים משינויי גודל טקסט:
-                </p>
-
-                <script src="https://gist.github.com/jossef/5069f268f375e8dc33cb6776b423e804.js?file=initialize-custom.js"></script>
-
-
-                <div class="buttons">
-                <span class="btn btn-orange">
-
-                <a class="" target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><span>לא מאמין?</span></a>
-                <a style="font-size: 10px" target="_blank" href="http://codepen.io/Jossef/pen/qqLgve"><span>ועכשיו?</span></a>
-                </span>
+                <div class="image-container">
+                    <img src="misc/logo.png">
                 </div>
+
+
+                <p class="header open-accessibility-text">זהו פרוייקט קוד פתוח עם חזון</p>
+                <p class="half open-accessibility-text">
+                    מאמץ משותף לסרגל נגישות חינמי ופשוט שכל מפעיל אתר יוכל לשלב בעצמו
+                </p>
+
+                <p class="header gap open-accessibility-text">אבל למה?</p>
+                <p class="half open-accessibility-text">
+                    קיים חוק במדינת ישראל המחייב אתרי אינטרנט לספק כלים לאנשים עם מוגבלויות. אתרים חדשים נדרשים מהיום הראשון לספק פתרונות נגישות
+                    ונמצאים בסכנה של תביעה עד לסכום של 75,000 ש"ח אם לא יעשו כלום
+                </p>
+
+
+                <p class="header gap open-accessibility-text">יש מצב לעזרה?</p>
+                <p class="half open-accessibility-text">
+                    כל אחד יכול לתרום לקוד הפרוייקט ולהפוך אותו ליותר טוב. מצאת באג?
+                    <a class="highlight" href="https://github.com/jossef/open-accessability/issues" target="_blank">דווח עליו כאן</a>
+                    ; יש לך רעיון למימוש יותר טוב? זורם!!! אני מציע לך לעשות
+                    <a class="highlight" href="https://github.com/jossef/open-accessability/fork" target="_blank">fork</a>
+                    ולפנק ב
+                    <a class="highlight" href="https://github.com/jossef/open-accessability" target="_blank">Pull Request</a>
+                </p>
             </div>
 
-            <div class="hover-focus">
+        </div>
+        <div class="section section-example aligner">
 
-                <p class="gap header open-accessibility-text">
-                    רשיון
+            <div class="aligner-item contribute">
+
+                <p class="header open-accessibility-text">
+                    איך מתחילים?
                 </p>
                 <p class="open-accessibility-text">
-                    הקוד משוחרר תחת רשיון Apache V2, תעשו איתו מה שאתם רוצים
+                    הוסיפו את קטע הקוד הבא שטוען את התוסף אל האתר
                 </p>
 
+                <script src="https://gist.github.com/jossef/5069f268f375e8dc33cb6776b423e804.js?file=include.html"></script>
+
+
+                <p class="open-accessibility-text">
+                    ואת הסקריפט הבא שמאתחל את התוסף
+                </p>
+
+                <script src="https://gist.github.com/jossef/5069f268f375e8dc33cb6776b423e804.js?file=initialize.html"></script>
+
+                <div class="buttons">
+                    <a class="btn btn-blue" href="http://codepen.io/Jossef/pen/GNPzzq/" target="_blank">
+                        <span>תראה לי דוגמא</span>
+                    </a>
+                </div>
+
+
+                <div class="hover-focus">
+
+                    <p class="gap header open-accessibility-text">
+                        התאמה אישית
+                    </p>
+
+
+                    <p class="gap open-accessibility-text">
+                        למשל, כך ניתן לשנות מאפיינים כמו את הselector של האלמנטים שמושפעים משינויי גודל טקסט:
+                    </p>
+
+                    <script src="https://gist.github.com/jossef/5069f268f375e8dc33cb6776b423e804.js?file=initialize-custom.js"></script>
+
+
+                    <div class="buttons">
+                        <span class="btn btn-orange">
+
+                            <a class="" target="_blank" href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+                                <span>לא מאמין?</span>
+                            </a>
+                            <a style="font-size: 10px" target="_blank" href="http://codepen.io/Jossef/pen/qqLgve">
+                                <span>ועכשיו?</span>
+                            </a>
+                        </span>
+                    </div>
+                </div>
+
+                <div class="hover-focus">
+
+                    <p class="gap header open-accessibility-text">
+                        רשיון
+                    </p>
+                    <p class="open-accessibility-text">
+                        הקוד משוחרר תחת רשיון Apache V2, תעשו איתו מה שאתם רוצים
+                    </p>
+
+                </div>
+
+
             </div>
-
-
         </div>
     </div>
-</div>
 </body>
+
 </html>
