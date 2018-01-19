@@ -1,8 +1,8 @@
-![image](https://raw.githubusercontent.com/jossef/open-accessability/master/misc/banner.png)
+![image](https://raw.githubusercontent.com/jossef/open-accessibility/master/misc/banner.png)
 
-[![Build Status](https://travis-ci.org/jossef/open-accessability.svg?branch=master)](https://travis-ci.org/jossef/open-accessability)
+[![Build Status](https://travis-ci.org/jossef/open-accessibility.svg?branch=master)](https://travis-ci.org/jossef/open-accessibility)
 
-Free accessability tools menu for website maintainers powered by jQuery. [See the demo](https://jossef.github.io/open-accessability/)
+Free accessibility tools menu for website maintainers powered by jQuery. [See the demo](https://jossef.github.io/open-accessibility/)
 
 ### Getting Started
 
@@ -10,20 +10,20 @@ Free accessability tools menu for website maintainers powered by jQuery. [See th
 #### CDN
 Add the following imports (make sure to import jQuery before)
 ```
-<script src="https://cdn.rawgit.com/jossef/open-accessability/master/dist/open-accessability.min.js"></script>
-<link rel="stylesheet" href="https://cdn.rawgit.com/jossef/open-accessability/master/dist/open-accessability.min.css">
+<script src="https://cdn.rawgit.com/jossef/open-accessibility/master/dist/open-accessibility.min.js"></script>
+<link rel="stylesheet" href="https://cdn.rawgit.com/jossef/open-accessibility/master/dist/open-accessibility.min.css">
 ```
 
 #### Bower
 
 ```
-bower install open-accessability --save
+bower install open-accessibility --save
 ```
 
 #### NPM
 
 ```
-npm install open-accessability --save
+npm install open-accessibility --save
 ```
 
 ### Initialization
@@ -61,9 +61,9 @@ localization: ['he']
 ```
 
 ### Langual support
-In order to use other language add the locale script file right after the `open-accessability.babel` libary ( The order is important ).
+In order to use other language add the locale script file right after the `open-accessibility.babel` libary ( The order is important ).
 ```
-<script src="dist/open-accessability.min.js"></script>
+<script src="dist/open-accessibility.min.js"></script>
 <script src="dist/locale.min.js"></script>
 ```
 
