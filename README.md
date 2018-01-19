@@ -56,6 +56,22 @@ zoom: 1
 cursor: false
 textSelector: '.open-accessibility-text'
 invert: false
-iconSize: 'm'
+iconSize: 'm',
+localization: ['he']
 ```
 
+### Langual support
+In order to use other language add the locale script file right after the `open-accessability.babel` libary ( The order is important ).
+```
+<script src="dist/open-accessability.min.js"></script>
+<script src="dist/locale.min.js"></script>
+```
+
+and use `localization` property in configuration to set the primary language
+```
+localization: ['en']
+```
+
+You may want to extend the `locale.js` file, or the `$.fn.openAccessibility.locale` property in order to add your own language!
+
+* We'll add a support for multilangual select in the menu, soon :)
