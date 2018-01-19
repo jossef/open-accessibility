@@ -20,7 +20,7 @@ gulp.task('sass', () => {
         }))
         .pipe(cssmin())
         .pipe(rename((path)=> {
-            path.basename = 'open-accessability.min';
+            path.basename = 'open-accessibility.min';
         }))
         .pipe(gulp.dest('./dist'));
 });
@@ -33,7 +33,7 @@ gulp.task('js', () => {
         }))
         .pipe(uglify())
         .pipe(rename((path)=> {
-            path.basename = 'open-accessability.min';
+            path.basename = path.basename.split('.')[0] + '.min';
         }))
         .pipe(gulp.dest('./dist'));
 });

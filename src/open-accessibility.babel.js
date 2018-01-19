@@ -11,7 +11,7 @@
 
         fontSize = fontSize || '';
         return UNITS
-            .filter(unit=>fontSize.match(new RegExp(unit + '$', 'gi')))
+            .filter(unit => fontSize.match(new RegExp(unit + '$', 'gi')))
             .pop()
 
     }
@@ -74,6 +74,41 @@
             });
     }
 
+    function getIconClass(size) {
+        var prefix = 'open-accessibility-size-';
+        return prefix + size;
+
+    }
+    function translateTheme(lang) {
+        var menu = $('.open-accessibility-menu');
+
+        Object.keys(lang)
+            .forEach((key, index) => {
+                menu.find('[data-lang="' + key + '"]').text(lang[key]);
+            });
+    }
+
+    function getLanguages(langs, map) {
+        var res = {};
+
+        langs.forEach((key) => {
+            var value = (map && map[key]) || ($.fn.openAccessibility.locale && $.fn.openAccessibility.locale[key]);
+            if ($.isPlainObject(value)) {
+                res[key] = value;
+            }
+            else {
+                console.error(key + 'language does not set!')
+            }
+        });
+
+        return res;
+    }
+
+    function getIconClass(size) {
+        var prefix = 'open-accessibility-size-';
+        return prefix + size;
+
+    }
     $.fn.openAccessibility = function (customOptions) {
         var element = this;
 
@@ -82,7 +117,7 @@
         var defaultOptions = {
             isMenuOpened: false,
             highlightedLinks: false,
-            isMobileEnabled: false,
+            isMobileEnabled: true,
             grayscale: 0,
             brightness: 100,
             contrast: 100,
@@ -92,7 +127,9 @@
             zoom: 1,
             cursor: false,
             textSelector: '.open-accessibility-text',
-            invert: false
+            invert: false,
+            localization: ['he'],
+            iconSize: 'm' // supported sizes are s(mall), m(edium), l(arge)
         };
 
         var userOptions = getUserOptions();
@@ -124,6 +161,13 @@
         var contrastButton = $(".open-accessibility-contrast-button");
         var resetButton = $(".open-accessibility-reset-button");
         var cursorWorkaround = $(".open-accessibility-cursor-workaround");
+
+        // Set icon size
+        container.addClass(getIconClass(options.iconSize));
+
+        // Set Langauges
+        var languages = getLanguages(options.localization, options.localizationMap);
+        translateTheme(languages[Object.keys(languages)[0]]);
 
 
         html.addClass('open-accessibility-zoom');
