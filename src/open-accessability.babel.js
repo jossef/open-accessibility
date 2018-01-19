@@ -79,6 +79,36 @@
         return prefix + size;
 
     }
+    function translateTheme(lang) {
+        var menu = $('.open-accessibility-menu');
+
+        Object.keys(lang)
+            .forEach((key, index) => {
+                menu.find('[data-lang="' + key + '"]').text(lang[key]);
+            });
+    }
+
+    function getLanguages(langs, map) {
+        var res = {};
+
+        langs.forEach((key) => {
+            var value = (map && map[key]) || ($.fn.openAccessibility.locale && $.fn.openAccessibility.locale[key]);
+            if ($.isPlainObject(value)) {
+                res[key] = value;
+            }
+            else {
+                console.error(key + 'language does not set!')
+            }
+        });
+
+        return res;
+    }
+
+    function getIconClass(size) {
+        var prefix = 'open-accessibility-size-';
+        return prefix + size;
+
+    }
     $.fn.openAccessibility = function (customOptions) {
         var element = this;
 
@@ -98,6 +128,7 @@
             cursor: false,
             textSelector: '.open-accessibility-text',
             invert: false,
+            localization: ['he'],
             iconSize: 'm' // supported sizes are s(mall), m(edium), l(arge)
         };
 
@@ -117,7 +148,7 @@
 
         var html = $('html');
         var body = $('body');
-        var container = $(".open-accessibility");        
+        var container = $(".open-accessibility");
         var menu = $(".open-accessibility-menu");
         var expandButton = $(".open-accessibility-expand-button");
         var closeButton = $(".open-accessibility-close-button");
@@ -133,6 +164,11 @@
 
         // Set icon size
         container.addClass(getIconClass(options.iconSize));
+
+        // Set Langauges
+        var languages = getLanguages(options.localization, options.localizationMap);
+        translateTheme(languages[Object.keys(languages)[0]]);
+
 
         html.addClass('open-accessibility-zoom');
 
