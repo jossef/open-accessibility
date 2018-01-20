@@ -19,7 +19,7 @@ gulp.task('sass', () => {
             cascade: false
         }))
         .pipe(cssmin())
-        .pipe(rename((path)=> {
+        .pipe(rename((path) => {
             path.basename = 'open-accessibility.min';
         }))
         .pipe(gulp.dest('./dist'));
@@ -32,8 +32,8 @@ gulp.task('js', () => {
             presets: ['es2015']
         }))
         .pipe(uglify())
-        .pipe(rename((path)=> {
-            path.basename = path.basename.split('.')[0] + '.min';
+        .pipe(rename((path) => {
+            path.basename = 'open-accessibility.min';
         }))
         .pipe(gulp.dest('./dist'));
 });

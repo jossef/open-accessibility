@@ -1,5 +1,9 @@
+
+
 (function ($) {
 
+
+    var locale  =  @@include('./locale/locale.json');
     var TEMPLATE = `@@include('./templates/menu.html')`;
 
     var LOCAL_STORAGE_OPTIONS_KEY = 'open-accessibility-config';
@@ -74,11 +78,6 @@
             });
     }
 
-    function getIconClass(size) {
-        var prefix = 'open-accessibility-size-';
-        return prefix + size;
-
-    }
     function translateTheme(lang) {
         var menu = $('.open-accessibility-menu');
 
@@ -92,7 +91,7 @@
         var res = {};
 
         langs.forEach((key) => {
-            var value = (map && map[key]) || ($.fn.openAccessibility.locale && $.fn.openAccessibility.locale[key]);
+            var value = (map && map[key]) || (locale[key]);
             if ($.isPlainObject(value)) {
                 res[key] = value;
             }
@@ -107,8 +106,8 @@
     function getIconClass(size) {
         var prefix = 'open-accessibility-size-';
         return prefix + size;
-
     }
+
     $.fn.openAccessibility = function (customOptions) {
         var element = this;
 
