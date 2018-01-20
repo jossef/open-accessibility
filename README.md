@@ -72,6 +72,6 @@ and use `localization` property in configuration to set the primary language
 localization: ['en']
 ```
 
-You may want to extend the `locale.js` file, or the `$.fn.openAccessibility.locale` property in order to add your own language!
+You may want to extend the `locale.json` file, or the `$.fn.openAccessibility.locale` property in order to add your own language!
 
 * We'll add a support for multilangual select in the menu, soon :)
